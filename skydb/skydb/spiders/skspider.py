@@ -6,8 +6,8 @@ import os
 OUTPUT = "../data/"
 INDEX = "index.txt"
 BGN = 1
-# END = 5858
-END = 3
+END = 5858 + 1
+# END = 3
 
 class SkSpider(scrapy.Spider):
   name = 'sk'
