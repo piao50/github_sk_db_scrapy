@@ -38,7 +38,7 @@ class SkSpider(scrapy.Spider):
     for row in response.selector.xpath("/html/body/div[3]/table/tr/td[2]/div/div/table//tr").getall():
       titles = []
       for title in Selector(text=row).xpath("//td/span/text()").getall():
-        titles.append(title)
+        titles.append('"{}"'.format(title))
       if len(titles) > 0:
         result.append(','.join(titles))
     Path(filename + ".txt").write_text("\r\n".join(result))
